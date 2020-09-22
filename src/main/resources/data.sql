@@ -1,1 +1,1 @@
-INSERT INTO Category (id, name, description) VALUES (  )
+INSERT INTO Category (id, name, description) VALUES ( 1, 'xxxx', 'sssss' );
