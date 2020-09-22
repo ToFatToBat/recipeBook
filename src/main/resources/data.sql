@@ -1,0 +1,1 @@
+INSERT INTO Category (id, name, description) VALUES (  )
