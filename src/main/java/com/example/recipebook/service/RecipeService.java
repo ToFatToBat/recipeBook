@@ -7,6 +7,8 @@ import com.example.recipebook.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RecipeService {
     private RecipeRepository recipeRepository;
@@ -20,5 +22,9 @@ public class RecipeService {
 
     public void save(Recipe recipe) {
         recipeRepository.save(recipe);
+    }
+
+    public List<Recipe> findAll() {
+        return recipeRepository.findAll();
     }
 }
