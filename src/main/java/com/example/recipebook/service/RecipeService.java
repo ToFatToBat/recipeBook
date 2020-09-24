@@ -1,6 +1,7 @@
 package com.example.recipebook.service;
 
 
+import com.example.recipebook.model.Recipe;
 import com.example.recipebook.repository.CategoryRepositiry;
 import com.example.recipebook.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +16,9 @@ public class RecipeService {
     public RecipeService(RecipeRepository recipeRepository, CategoryRepositiry categoryRepositiry) {
         this.recipeRepository = recipeRepository;
         this.categoryRepositiry = categoryRepositiry;
+    }
+
+    public void save(Recipe recipe) {
+
     }
 }
