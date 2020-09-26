@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 public class RecipeController {
 
-    RecipeService recipeService;
+    private RecipeService recipeService;
 
     @Autowired
     public RecipeController(RecipeService recipeService) {
