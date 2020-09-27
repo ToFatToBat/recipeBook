@@ -8,17 +8,22 @@
 <body>
 <div th:replace="fragments :: header"></div>
 <div>
-            <div class="topnav">
-                <a class="active" href="#home">Home</a>
-                <a href="/all">Wyswietl wszystkie</a>
-                <a href="/add">Dodaj przepis</a>
-                <a href="#about">About</a>
-            </div>
-
-
-
-
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="/all">Wyswietl wszystkie</a>
+        <a href="/add">Dodaj przepis</a>
+        <a href="#about">About</a>
     </div>
+    <div>
+        <h2 class="toprecip"> TOP RECIPIES </h2><br/><br/>
+        <div th:each="toprank: ${topRanked}">
+            <h2 th:text="${toprank.name}">Nazwa przepisu</h2>
+            <h3 th:text="${toprank.description}">Opis przepisu</h3>
+        </div>
+    </div>
+
+
+</div>
 
 </body>
 </html>

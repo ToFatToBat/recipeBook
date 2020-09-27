@@ -21,11 +21,19 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
+    @GetMapping("/")
+    public String index(Model model) {
+        List<Recipe> topRanked = recipeService.findTopRecipe();
+        model.addAttribute("topRanked", topRanked);
+        return "index";
+    }
+
+
     @GetMapping("/all")
     public String all(Model model) {
         List<Recipe> all = recipeService.findAll();
-        model.addAttribute("recipies", all);
-        return "redirect:/";
+        model.addAttribute("allOrCategory", all);
+        return "recipies";
     }
 
     @PostMapping("/add")
