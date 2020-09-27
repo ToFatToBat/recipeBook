@@ -1,20 +1,17 @@
-.background{
+.header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-image: url("https://s2.best-wallpaper.net/wallpaper/3840x2160/1807/Meal-vegetables-salad_3840x2160.jpg ");
-
-}
-
-.fullscrean {
     width: 100%;
-    height: 100vh;
-    padding: 40vh;
+    height: 30vh;
 }
+
 .topnav {
     background-color: #333;
     overflow: hidden;
 }
+
 .topnav a {
     float: left;
     color: #f2f2f2;
@@ -23,11 +20,30 @@
     text-decoration: none;
     font-size: 17px;
 }
+
 .topnav a:hover {
     background-color: #99e600;
     color: black;
 }
+
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+.toprecipiesfield {
+
+}
+
+.hashtag {
+    background-color: whitesmoke;
+    width: 10%;
+    height: 7%;
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+    font-family: Verdana;
+    font-style: oblique;
+    margin-left: 40vh;
+    margin-top: 45vh;
+
 }
