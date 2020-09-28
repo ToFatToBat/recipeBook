@@ -33,7 +33,7 @@ public class RecipeController {
     public String all(Model model) {
         List<Recipe> all = recipeService.findAll();
         model.addAttribute("allOrCategory", all);
-        return "recipies";
+        return "all-recipies";
     }
 
     @PostMapping("/add")
