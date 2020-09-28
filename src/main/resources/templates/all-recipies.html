@@ -16,14 +16,13 @@
         <a href="#about">About</a>
     </div>
     <div>
-        <h2 class="top"> ALL RECIPIES </h2><br/>
-            <select class="form-control" id="exampleFormControlSelect1" required >
-                <option selected disabled>Kategoria</option>
-                <option><a href="/?category=Ciasta">Ciasta</a></option>
-                <option><a href="/?category=Desery">Desery</a></option>
-                <option><a href="/?category=Zupy">Zypy</a></option>
-
-            </select>
+        <h2 class="top"> WSZYSTKIE PRZEPISY </h2><br/>
+            <div class="category-option">
+                Kategoria:
+                <a href="/all?category=1">Ciasta</a>
+                <a href="/all?category=2">Desery</a>
+                <a href="/all?category=3">Zypy</a>
+            </div>
 
 
         <div class="recipeList" th:each="all: ${allOrCategory}">

@@ -63,3 +63,8 @@
     width: 40vw;
     padding: 2%;
 }
+.category-option {
+    width: 50vw;
+    margin-left: 15vw;
+    font-family: Verdana;
+}
