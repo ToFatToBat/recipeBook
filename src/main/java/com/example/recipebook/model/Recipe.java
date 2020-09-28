@@ -18,7 +18,9 @@ public class Recipe {
     private Long id;
     private String name;
     private String description;
-    private boolean likes;
+    private int likes;
+    private String url;
+
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     Category category;

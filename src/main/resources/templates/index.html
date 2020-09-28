@@ -16,10 +16,19 @@
     </div>
     <div>
         <h2 class="toprecip"> TOP RECIPIES </h2><br/><br/>
-        <div th:each="toprank: ${topRanked}">
-            <h2 th:text="${toprank.name}">Nazwa przepisu</h2>
-            <h3 th:text="${toprank.description}">Opis przepisu</h3>
+        <div class="recipeList" th:each="toprank: ${topRanked}">
+            <table>
+                <td class="table-column-1">
+                    <h1 th:text="${toprank.name}">Nazwa przepisu</h1>
+                    <h3 th:text="${toprank.description}">Opis przepisu</h3>
+                </td>
+                <td class="table-column-2">
+                    <img th:src="${toprank.url}" style="width: 20vw">
+                </td>
+            </table>
         </div>
+
+
     </div>
 
 

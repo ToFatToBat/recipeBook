@@ -49,5 +49,17 @@
 .toprecip {
     margin-top: 10vh;
     margin-left: 15vw;
+    font-size: 200%;
+}
+.recipeList {
+    margin-top: 5vh;
+    margin-left: 15vw;
+}
+.table-column-1 {
+    width: 40vw;
 
+}
+.table-column-2 {
+    width: 40vw;
+    padding: 2%;
 }
