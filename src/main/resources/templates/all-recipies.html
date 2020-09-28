@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Ksiazka kucharska</title>
 </head>
 <body>
@@ -15,7 +16,16 @@
         <a href="#about">About</a>
     </div>
     <div>
-        <h2 class="toprecip"> TOP RECIPIES </h2><br/><br/>
+        <h2 class="top"> ALL RECIPIES </h2><br/>
+            <select class="form-control" id="exampleFormControlSelect1" required >
+                <option selected disabled>Kategoria</option>
+                <option><a href="/?category=Ciasta">Ciasta</a></option>
+                <option><a href="/?category=Desery">Desery</a></option>
+                <option><a href="/?category=Zupy">Zypy</a></option>
+
+            </select>
+
+
         <div class="recipeList" th:each="all: ${allOrCategory}">
             <table>
                 <td class="table-column-1">
