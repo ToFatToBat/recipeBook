@@ -15,7 +15,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
     List<Recipe> findAllByCategory(Category category);
 
-//    List<Recipe> findTop3ByLikes();
+    List<Recipe> findTop3ByOrderByLikesDesc();
 }
 
 
