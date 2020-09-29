@@ -19,7 +19,13 @@
             <div class="form-group row borderLines get-form">
                 <label class="col-sm-2 col-form-label">Nazwa potrawy</label>
                 <div class="col-2">
-                    <input type="text" th:field="*{name}" class="form-control" placeholder="Potrawa" minlength="3" maxlength="10" required name="firstName">
+                    <input type="text" th:field="*{name}" class="form-control" placeholder="Potrawa" minlength="3" maxlength="10" required name="name">
+                </div>
+            </div>
+            <div class="form-group row borderLines get-form">
+                <label class="col-sm-2 col-form-label">Przepis potrawy</label>
+                <div class="col-2">
+                    <input type="text" th:field="*{description}" class="form-control" placeholder="Przepis" minlength="3" maxlength="500" required name="description">
                 </div>
             </div>
 
