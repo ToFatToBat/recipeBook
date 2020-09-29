@@ -69,7 +69,12 @@
     font-family: Verdana;
 }
 .get-form {
-    width: 50vw;
+    width: 30vw;
+    margin-left: 25vw;
+    font-family: Verdana;
+}
+.get-form-labels {
+    width: 20vw;
     margin-left: 25vw;
     font-family: Verdana;
 }

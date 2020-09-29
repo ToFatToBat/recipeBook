@@ -55,7 +55,7 @@ public class RecipeController {
 
 
     @PostMapping("/add")
-    public String save(Recipe recipe) {
+    public String add (Recipe recipe) {
         recipeService.save(recipe);
         return "redirect:/";
     }

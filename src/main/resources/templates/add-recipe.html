@@ -16,19 +16,37 @@
             <a href="#about">About</a>
         </div><br/>
         <form method="post" th:action="${mode == '/add'}" th:object="${recipe}">
-            <div class="form-group row borderLines get-form">
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Nazwa potrawy</label>
-                <div class="col-2">
+                <div class="col-4 " >
                     <input type="text" th:field="*{name}" class="form-control" placeholder="Potrawa" minlength="3" maxlength="10" required name="name">
                 </div>
             </div>
-            <div class="form-group row borderLines get-form">
-                <label class="col-sm-2 col-form-label">Przepis potrawy</label>
-                <div class="col-2">
-                    <input type="text" th:field="*{description}" class="form-control" placeholder="Przepis" minlength="3" maxlength="500" required name="description">
+            <div class="form-group row borderLines ">
+                <label for="comment" class="col-sm-2 col-form-label">Przepis potrawy</label>
+                <div class="col-4">
+                    <textarea th:field="*{description}" class="form-control" rows="5" id="comment" minlength="3" maxlength="500"></textarea>
                 </div>
             </div>
-
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">URL</label>
+                <div class="col-4 " >
+                    <input type="text" th:field="*{url}" class="form-control" placeholder="Link zdjecia" minlength="3" maxlength="100">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Kategoria</label>
+                <div class="col-4 " >
+                    <select th:field="*{category}" class="form-control" id="exampleFormControlSelect1" required>
+                        <option selected disabled value="">Wybierz</option>
+                        <option value=1>Ciasta</option>
+                        <option value=2>Desery</option>
+                        <option value=3>Zupy</option>
+                    </select><br/>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary borderLines">Submit</button>
+        </form>
     </div>
 </body>
 </html>
