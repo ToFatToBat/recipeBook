@@ -32,16 +32,27 @@ public class RecipeController {
 
 
     @GetMapping("/all")
-    public String all(@RequestParam(name = "category", required = false ) Category category, Model model) {
+    public String all(@RequestParam(name = "category", required = false) Category category, Model model) {
         List<Recipe> recipies;
         if (category != null) {
             recipies = recipeService.findByCategory(category);
-        }else {
+        } else {
             recipies = recipeService.findAll();
         }
         model.addAttribute("allOrCategory", recipies);
         return "all-recipies";
     }
+
+    @GetMapping("/add")
+    public String getAddForm(Model model) {
+        Recipe recipe = new Recipe();
+
+        model.addAttribute("recipe", recipe);
+        model.addAttribute("mode", "add");
+        return "add-recipe";
+
+    }
+
 
     @PostMapping("/add")
     public String save(Recipe recipe) {
