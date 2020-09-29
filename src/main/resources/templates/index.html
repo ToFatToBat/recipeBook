@@ -17,17 +17,19 @@
     </div>
     <div>
         <h2 class="top"> TOP RECIPIES </h2><br/>
-        <a th:href="@{'/recipie?name=' + ${toprank.name}}" class="recipeList" th:each="toprank: ${topRanked}">
-            <table>
-                <td class="table-column-1">
-                    <h1 th:text="${toprank.name}">Nazwa przepisu</h1>
-                    <h3 th:text="${toprank.description}">Opis przepisu</h3>
-                </td>
-                <td class="table-column-2">
-                    <img th:src="${toprank.url}" alt="Zdjecie posilku" style="width: 20vw">
-                </td>
-            </table>
-        </a>
+        <div class="recipeList">
+            <a th:href="@{'/recipie?name=' + ${toprank.name}}" class="recipeList" th:each="toprank: ${topRanked}">
+                <table>
+                    <td class="table-column-1">
+                        <h1 th:text="${toprank.name}">Nazwa przepisu</h1>
+                        <h3 th:text="${toprank.description}">Opis przepisu</h3>
+                    </td>
+                    <td class="table-column-2">
+                        <img th:src="${toprank.url}" alt="Zdjecie posilku" style="width: 20vw">
+                    </td>
+                </table>
+            </a>
+        </div>
 
 
     </div>

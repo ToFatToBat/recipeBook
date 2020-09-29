@@ -15,7 +15,7 @@
         <a href="/add">Dodaj przepis</a>
         <a href="#about">About</a>
     </div>
-    <div>
+    <a>
         <h2 class="top"> WSZYSTKIE PRZEPISY </h2><br/>
             <div class="category-option">
                 Kategoria:
@@ -25,17 +25,18 @@
                 <a href="/all?category=3">Zypy</a>
             </div>
 
-
-        <div class="recipeList" th:each="all: ${allOrCategory}">
-            <table>
-                <td class="table-column-1">
-                    <h1 th:text="${all.name}">Nazwa przepisu</h1>
-                    <h3 th:text="${all.description}">Opis przepisu</h3>
-                </td>
-                <td class="table-column-2">
-                    <img th:src="${all.url}" alt="Zdjecie posilku" style="width: 20vw">
-                </td>
-            </table>
+        <div class="recipeList">
+            <a th:href="@{'/recipie?name=' + ${all.name}}" class="recipeList" th:each="all: ${allOrCategory}">
+                <table>
+                    <td class="table-column-1">
+                        <h1 th:text="${all.name}">Nazwa przepisu</h1>
+                        <h3 th:text="${all.description}">Opis przepisu</h3>
+                    </td>
+                    <td class="table-column-2">
+                        <img th:src="${all.url}" alt="Zdjecie posilku" style="width: 20vw">
+                    </td>
+                </table>
+            </a>
         </div>
     </div>
 </div>
