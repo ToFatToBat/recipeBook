@@ -2,11 +2,30 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Recipie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Książka kucharska</title>
 </head>
 <body>
-    <div th:replace="fragments::header"></div>
-
-
+    <div th:replace="fragments :: header"></div>
+    <div>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="/all">Wszystkie przepisy</a>
+            <a href="/add">Dodaj przepis</a>
+            <a href="#about">About</a>
+        </div><br/>
+        <div class="recipeList">
+            <table>
+                <td class="table-column-1">
+                    <h1 th:text="${all.name}">Nazwa przepisu</h1>
+                    <h3 th:text="${all.description}">Opis przepisu</h3>
+                </td>
+                <td class="table-column-2">
+                    <img th:src="${all.url}" alt="Zdjecie posilku" style="width: 20vw">
+                </td>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

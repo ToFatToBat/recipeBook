@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class RecipeController {
@@ -53,10 +54,22 @@ public class RecipeController {
 
     }
 
-
     @PostMapping("/add")
-    public String add (Recipe recipe) {
+    public String add(Recipe recipe) {
         recipeService.save(recipe);
         return "redirect:/";
     }
+
+    @GetMapping("/przepis")
+    String getOneRecip (@RequestParam String name, Model model) {
+        Optional<Recipe> recipe = recipeService.findByName (name);
+
+        if (recipe.isPresent()) {
+            model.addAttribute("recipe", recipe.get());
+            return "recipe";
+        }else {
+            return "redirect:/";
+        }
+    }
+
 }
