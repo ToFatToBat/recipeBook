@@ -57,32 +57,48 @@ public class RecipeController {
     @PostMapping("/add")
     public String add(Recipe recipe) {
         recipeService.save(recipe);
-        return "redirect:/";
+        return "redirect:/przepis?name" + recipe.getName();
     }
 
     @GetMapping("/przepis")
-    String getOneRecip (@RequestParam String name, Model model) {
-        Optional<Recipe> recipe = recipeService.findByName (name);
+    String getOneRecip(@RequestParam String name, Model model) {
+        Optional<Recipe> recipe = recipeService.findByName(name);
 
         if (recipe.isPresent()) {
             model.addAttribute("recipe", recipe.get());
             return "recipe";
-        }else {
+        } else {
             return "redirect:/";
         }
     }
+
     @GetMapping("/edytuj")
     String getEditForm(@RequestParam String name, Model model) {
-        Optional<Recipe> recipe = recipeService.findByName (name);
+        Optional<Recipe> recipe = recipeService.findByName(name);
 
         if (recipe.isPresent()) {
             model.addAttribute("recipe", recipe.get());
             model.addAttribute("mode", "edit");
             return "add-recipe";
-        }else {
+        } else {
             return "redirect:/";
         }
     }
-    }
 
+    @PostMapping("/edytuj")
+    String edit(Recipe recipe) {
+        Optional<Recipe> optionalRecipe = recipeService.findByName(recipe.getName());
+        if (optionalRecipe.isPresent()) {
+            Recipe recipeFormRepository = optionalRecipe.get();
+            recipeFormRepository.setName(recipe.getName());
+            recipeFormRepository.setDescription(recipe.getDescription());
+            recipeFormRepository.setUrl(recipe.getUrl());
+            recipeFormRepository.setCategory(recipe.getCategory());
+            return "redirect:/przepis?name" + recipeFormRepository.getName();
+        } else {
+            return "redirect:/";
+        }
+    }
 }
+
+

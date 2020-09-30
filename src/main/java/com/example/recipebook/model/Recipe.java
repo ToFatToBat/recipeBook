@@ -9,8 +9,6 @@ import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 public class Recipe {
     @Id
@@ -24,4 +22,53 @@ public class Recipe {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     Category category;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
+
