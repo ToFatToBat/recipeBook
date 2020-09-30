@@ -71,5 +71,18 @@ public class RecipeController {
             return "redirect:/";
         }
     }
+    @GetMapping("/edytuj")
+    String getEditForm(@RequestParam String name, Model model) {
+        Optional<Recipe> recipe = recipeService.findByName (name);
+
+        if (recipe.isPresent()) {
+            model.addAttribute("recipe", recipe.get());
+            model.addAttribute("mode", "edit");
+            return "add-recipe";
+        }else {
+            return "redirect:/";
+        }
+    }
+    }
 
 }

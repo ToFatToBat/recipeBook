@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -15,15 +15,19 @@
             <a href="/add">Dodaj przepis</a>
             <a href="#about">About</a>
         </div><br/>
-        <div class="recipeListg">
+        <div class="recipeList">
             <table>
-                <td class="table-column-1">
-                    <h1 th:text="${all.name}">Nazwa przepisu</h1>
-                    <h3 th:text="${all.description}">Opis przepisu</h3>
-                </td>
-                <td class="table-column-2">
-                    <img th:src="${all.url}" alt="Zdjecie posilku" style="width: 20vw">
-                </td>
+
+                    <td class="table-column-1">
+                        <h1 th:text="${recipe.name}">Nazwa przepisu</h1>
+                        <h3 th:text="${recipe.description}">Opis przepisu</h3>
+                    </td>
+                    <td class="table-column-2">
+                        <img th:src="${recipe.url}" alt="Zdjecie posilku" style="width: 20vw">
+                    </td>
+                    <a th:href="@{'/edytuj?name=' + ${recipe.name}}">Edytuj przepis</a><br/>
+
+
             </table>
         </div>
     </div>
