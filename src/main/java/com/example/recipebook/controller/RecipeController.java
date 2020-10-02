@@ -57,7 +57,7 @@ public class RecipeController {
     @PostMapping("/add")
     public String add(Recipe recipe) {
         recipeService.save(recipe);
-        return "redirect:/przepis?name" + recipe.getName();
+        return "redirect:/przepis?name=" + recipe.getName();
     }
 
     @GetMapping("/przepis")
@@ -94,7 +94,8 @@ public class RecipeController {
             recipeFormRepository.setDescription(recipe.getDescription());
             recipeFormRepository.setUrl(recipe.getUrl());
             recipeFormRepository.setCategory(recipe.getCategory());
-            return "redirect:/przepis?name" + recipeFormRepository.getName();
+            recipeService.save(recipeFormRepository);
+            return "redirect:/przepis?name=" + recipeFormRepository.getName();
         } else {
             return "redirect:/";
         }
