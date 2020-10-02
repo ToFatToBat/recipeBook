@@ -21,7 +21,7 @@ public class Recipe {
 
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    Category category;
+    private Category category;
 
     public Long getId() {
         return id;
