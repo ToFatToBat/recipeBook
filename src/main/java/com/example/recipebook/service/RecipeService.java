@@ -35,11 +35,12 @@ public class RecipeService {
     }
 
     public List<Recipe> findTopRecipe (){
-        return recipeRepository.findTop3ByOrderByLikesDesc(); //zmienic na TOP 3, tylko dlaczego nie ładuję się ten bean?
+        return recipeRepository.findTop3ByOrderByLikesDesc();
     }
-
 
     public Optional<Recipe> findByName(String name) {
             return recipeRepository.findAllByName(name);
     }
+
+    public Optional<Recipe> findById(Long id) { return recipeRepository.findAllById(id);}
 }
