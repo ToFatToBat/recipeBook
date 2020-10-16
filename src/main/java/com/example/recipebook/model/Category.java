@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @AllArgsConstructor
@@ -22,8 +24,6 @@ public class Category {
     private String name;
     private String description;
 
-    @ManyToOne (cascade = CascadeType.PERSIST)
-    private Recipe recipe;
-
-
+    @OneToMany (mappedBy = "category", cascade = CascadeType.PERSIST)
+    private List<Recipe> recipies = new ArrayList<>();
 }
