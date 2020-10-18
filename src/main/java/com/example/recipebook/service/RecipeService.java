@@ -43,4 +43,14 @@ public class RecipeService {
     }
 
     public Optional<Recipe> findById(Long id) { return recipeRepository.findAllById(id);}
+
+    public Optional<Recipe> optionalAddLike(Long id) {
+        Optional<Recipe> recipeAddLike = recipeRepository.findAllById(id);
+        Recipe addLike = optionalAddLike(id).get();
+        int noOfLikes = addLike.getLikes();
+        noOfLikes++;
+        addLike.setLikes(noOfLikes);
+        recipeRepository.save(addLike);
+        return recipeRepository.findAllById(id);
+    }
 }

@@ -100,6 +100,14 @@ public class RecipeController {
             return "redirect:/";
         }
     }
+
+    @GetMapping("/like")
+    public String addLike (@RequestParam Long id) {
+     recipeService.optionalAddLike(id);
+     return
+        }
+
+    }
 }
 
 
