@@ -30,27 +30,30 @@ public class RecipeService {
         return recipeRepository.findAll();
     }
 
-    public List<Recipe> findByCategory (Category category) {
+    public List<Recipe> findByCategory(Category category) {
         return recipeRepository.findAllByCategory(category);
     }
 
-    public List<Recipe> findTopRecipe (){
+    public List<Recipe> findTopRecipe() {
         return recipeRepository.findTop3ByOrderByLikesDesc();
     }
 
-    public Optional<Recipe> findByName(String name) {
-            return recipeRepository.findAllByName(name);
+
+    public Optional<Recipe> findById(Long id) {
+        return recipeRepository.findAllById(id);
     }
 
-    public Optional<Recipe> findById(Long id) { return recipeRepository.findAllById(id);}
-
-    public Optional<Recipe> optionalAddLike(Long id) {
+    public Optional<Recipe> AddLike(Long id) {
         Optional<Recipe> recipeAddLike = recipeRepository.findAllById(id);
-        Recipe addLike = optionalAddLike(id).get();
+        Recipe addLike = AddLike(id).get();
         int noOfLikes = addLike.getLikes();
         noOfLikes++;
         addLike.setLikes(noOfLikes);
         recipeRepository.save(addLike);
         return recipeRepository.findAllById(id);
+    }
+
+    public Optional<Recipe> getLike(Long id) {
+        return recipeRepository.findAllByIdAndLikesIs(id);
     }
 }
