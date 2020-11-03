@@ -101,14 +101,15 @@ public class RecipeController {
         }
     }
 
-    @GetMapping("/like")
-    void getLike(@RequestParam Long id, Model model) {
-        Optional<Recipe> recipe = recipeService.getLike(id);
-        if (recipe.isPresent()) {
-            model.addAttribute("likeAmount", recipe.get().getLikes());
-        }
-    }
-
+//    @GetMapping("/like")
+//    void getLike(@RequestParam Long id, Model model) {
+//        Optional<Recipe> recipe = recipeService.findById(id);
+//        if (recipe.isPresent()) {
+//            model.addAttribute("likeAmount", recipe.get());
+//        }
+//    }
+//    @PostMapping("/like")
+//    void addLike (RequestParam )
 
 }
 

@@ -19,7 +19,6 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
     Optional<Recipe> findAllById(Long id);
 
-    Optional<Recipe> findAllByIdAndLikesIs(Long id);
 }
 
 

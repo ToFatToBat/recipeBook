@@ -53,7 +53,4 @@ public class RecipeService {
         return recipeRepository.findAllById(id);
     }
 
-    public Optional<Recipe> getLike(Long id) {
-        return recipeRepository.findAllByIdAndLikesIs(id);
-    }
 }
