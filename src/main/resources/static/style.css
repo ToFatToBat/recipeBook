@@ -46,36 +46,48 @@
     margin-left: 40vh;
     margin-top: 45vh;
 }
+
 .top {
     margin-top: 10vh;
     margin-left: 15vw;
     font-size: 300%;
 }
+
 .recipeList {
     margin-top: 5vh;
     margin-left: 15vw;
     color: #333333;
 }
+
 .table-column-1 {
     width: 40vw;
 
 }
+
 .table-column-2 {
     width: 40vw;
     padding: 2%;
 }
+
 .category-option {
     width: 50vw;
     margin-left: 15vw;
     font-family: Verdana;
 }
+
 .get-form {
     width: 30vw;
     margin-left: 25vw;
     font-family: Verdana;
 }
+
 .get-form-labels {
     width: 20vw;
     margin-left: 25vw;
     font-family: Verdana;
+}
+
+.likes-position {
+    text-align: right;
+    padding-right: 5vw;
 }
