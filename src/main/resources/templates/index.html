@@ -23,7 +23,7 @@
                     <td class="table-column-1">
                         <h1 th:text="${toprank.name}">Nazwa przepisu</h1>
                         <h3 th:text="${toprank.description}">Opis przepisu</h3>
-                        <h5 th:text="${toprank.getLikes}"></h5>
+                        <h5 class="likes-position" th:text="|Polubienia: ${toprank.likes}|">Liczba polubień</h5>
                     </td>
                     <td class="table-column-2">
                         <img th:src="${toprank.url}" alt="Zdjecie posilku" style="width: 20vw">
