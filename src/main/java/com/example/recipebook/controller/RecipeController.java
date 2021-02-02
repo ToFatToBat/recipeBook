@@ -103,9 +103,9 @@ public class RecipeController {
 
 
     @GetMapping("/like")
-    void addLike (@RequestParam Long id) {
+    String addLike (@RequestParam Long id) {
         Optional<Recipe> optionalRecipeAddLike = recipeService.AddLike(id);
-
+        return "recipe";
     }
 
 }
